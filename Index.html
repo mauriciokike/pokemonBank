@@ -1,8 +1,9 @@
-<!DOCTYPE vhtml>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=divice-windth, inicail-sacale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>login</title>
         <link rel="stylesheet" href="css\bootstrap.min.css">
         <link rel="stylesheet" href="Css.css">
@@ -20,14 +21,14 @@
                     <H2 class="fw-bold">Bienvenidos</H2>
                 </div>
                 <!--Login-->
-                    <form action="#">
+                    <form id="form">
                         <div class="labels">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <Input type="email" class="Form-Control" name="email"></Input>
+                            <p class="login-text">Usuario</p>           
+                            <input type="text" class="Form-Control" id="username">
                         </div>
                         <div class="labels">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <Input type="password" class="Form-Control" name="password"></Input:text>
+                           <p class="login-text">Contraseña</p>
+                                <input class="Form-Control"  type="password" id="password">
                                 <div class="Crear-recuperacion">
                                     <span><a href="#">¿Has Olvidado la Contraseña?</a></span>
                                     <br>
@@ -35,10 +36,10 @@
                         </div>
                         <div class="mb-4 form-check">
                             <Input Type="checkbox" name="Connected" class="form-check-input" id=""> 
-                            <label for="connected" class="form-check-label">Manetener Sesión</label></Input>
+                            <label for="connected" class="form-check-label">Manetener Sesión</label>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Inicio Sesión</button>
+                            <input type="button" class="btn- mb-3" id="button" value="Iniciar Sesion" onclick="login()">
                         </div>
                         <div class="Crear-registro">
                             <span>No Tienes Cuenta? <a href="#">Regístrate</a></span>
@@ -66,7 +67,8 @@
 </div>
     </div>
     <div class="derechos">
-    <p class="copyright text-center"> © Pokémon Bank 2022</p></div>
+    <p class="copyright text-center">© Pokémon Bank 2022</p></div>
     </footer>
+    <script src="main.js"></script>
 </body>
     </html>
