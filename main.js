@@ -2,7 +2,8 @@
 
 const user_cuenta = document.getElementById('usercuenta')
 let saldo = 500
-
+//funcion onclick determiando el usuerio y contraseña y alertas de erros 
+//guardando el usuerio y saldo en localstorage 
 function login(){ 
     var user = document.getElementById('username').value
    var pass = document.getElementById('password').value     
@@ -32,6 +33,7 @@ function login(){
             swal ( "Oops" ,  "No se ingreso el usuario!",  "error");
             }
 }
+    //funcion imprimir nombre del usuario 
     window.onload = function imprimir(){
         user_cuenta.innerText = localStorage.getItem('infocuenta');
     }
