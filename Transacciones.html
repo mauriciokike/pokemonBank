@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><div class="logo"><img src="img/Logo.png" class="logo-header" alt=""></a>
+            <a class="navbar-brand" href=""><div class="logo"><img src="img/Logo.png" class="logo-header" alt=""></div></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link header-text" aria-current="page" href="./Index.html">Login</a>
+                        <a class="nav-link active header-text" aria-current="page" href="./Index.html">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header-text" aria-current="page" href="./pantalla%20de%20accion.html">Inicio</a>
+                        <a class="nav-link active header-text" aria-current="page" href="./pantalla%20de%20accion.html">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active header-text" aria-current="page" href="./Transacciones.html">Transacciones</a>
@@ -42,69 +42,90 @@
     <main class="mt-5">
         <div class="container">
 
-            <h2>Historial de transacciones:</h2>
-            
-            <hr>
+            <h2>Transacciones: <span id="usercuenta"></span></h2>
+            <hr>                    
 
-            <div class="form-container">
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="col">
-                            <label for="cuentaOrigen" class="form-label">Cuenta de origen:</label>
-                            <input type="text" class="form-control bordered" id="cuentaOrigen">
+                  <div class="form-container">
+                   
+                    <div class="cantainer">
+                            <input type="radio" id="check_ingreso" name="radioExample" onclick="mostrar_ocultar('ingreso');">
+                            <label for="check_ingreso" class="btn-transaccion" id="checki">Ingreso</label>
+                            <input type="radio" id="check_retiro" name="radioExample" onclick="mostrar_ocultar('retiro');">
+                            <label for="check_retiro"  class="btn-transaccion" id="boton-retiro"> Retiro </label>
+                    </div> 
+                    <form id="form">
+                    <div id="div-ingreso">
+                        <div class="col" >
+                            <label for="cuentaOrigen" class="form-label">descripcion:</label>
+                            <input type="text" class="form-control bordered" id="descripcion">
                         </div>
                         <div class="col">
-                            <label for="cuentaDestino" class="form-label">Cuenta de destino:</label>
-                            <input type="text" class="form-control bordered" id="cuentaDestino">
+                            <label for="cuentaDestino" class="form-label">Monto:</label>
+                            <input type="number" class="form-control bordered" id="monto">
                         </div>
                         <div class="col">
                             <label for="fecha" class="form-label">Fecha:</label>
                             <input type="date" class="form-control bordered" id="fecha">
                         </div>
-                        <div class="col-md-12 mt-3">
-                            <input type="submit" value="Consultar" class="btn btn-success">
+                      </div>    
+                      <div id="btn-ingreso"   class="col-md-12 mt-3">
+                            <input type="submit" value="Cargar" class="btn-transaccion ">
                         </div>
-                    </div>
-                    <hr>
-                </form>
-            </div>
+                </form>  
+                <form id="form1" >                 
+                <div id="div-retiro">
+                        <div class="col" >
+                            <label for="cuentaOrigen" class="form-label">descripcion:</label>
+                            <input type="text" class="form-control bordered" id="descripcion2">
+                        </div>
+                        <div class="col">
+                            <label for="cuentaDestino" class="form-label">Monto:</label>
+                            <input type="number" class="form-control bordered" id="monto2">
+                        </div>
+                        <div class="col">
+                            <label for="fecha" class="form-label">Fecha:</label>
+                            <input type="date" class="form-control bordered" id="fecha2">
+                        </div>
 
+                    </div>                        
+                    <div id="btn-retiro" class="col-md-12 mt-3">
+                            <input type="submit" value="Cargar" class="btn-transaccion mskl">
+                        </div>
+                </form>
+                    <hr> 
+                    <p class="info-">para obseravar los datos luego de ingresados por favor seleciones uno de los botones de INGRESAR o RETIRAR, de igual manera para poder cargar los datos</p>
+            </div>
             <div class="table-responsive mt-5">
-                <table class="table text-center align-middle table-bordered table-hover">
+                <table class="table text-center align-middle table-bordered table-hover" id="div-td">
                     <thead class="table-dark">
                         <tr>
                             <th>Estado:</th>
                             <th>Fecha:</th>
-                            <th>Referencia:</th>
-                            <th>Cuenta de origen:</th>
-                            <th>Cuenta de destinario:</th>
+                            <th>descripcion:</th>
                             <th>Monto:</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                    </thead >
+                    <tbody id="tasks">  
+                      </tbody>
+                </table>
+                <table class="table text-center align-middle table-bordered table-hover" id="div-td2">
+                    <thead class="table-dark">
                         <tr>
-                            <td class="text-danger">Pendiente</td>
-                            <td>dd/mm/yyyy</td>
-                            <td>---</td>
-                            <td>xxx-xxx-xxx-xxx</td>
-                            <td>xxx-xxx-xxx-xxx</td>
-                            <td>$00.00</td>
+                            <th>Estado:</th>
+                            <th>Fecha:</th>
+                            <th>descripcion:</th>
+                            <th>Monto:</th>
                         </tr>
-                        <tr>
-                            <td class="text-danger">Pendiente</td>
-                            <td>dd/mm/yyyy</td>
-                            <td>---</td>
-                            <td>xxx-xxx-xxx-xxx</td>
-                            <td>xxx-xxx-xxx-xxx</td>
-                            <td>$00.00</td>
-                        </tr>
-                    </tbody>
+                    </thead >
+                    <tbody id="retirotasks">  
+                      </tbody>
                 </table>
             </div>
         </div>
 
     </main>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="Transacciones.js"></script>
     <footer>
         <div class="social">
             <img src="img/Logo.png" alt="Logo" class="logo-footer">
