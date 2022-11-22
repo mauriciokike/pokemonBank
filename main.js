@@ -1,17 +1,15 @@
-
-
-const user_cuenta = document.getElementById('usercuenta')
-let saldo = 500
 //funcion onclick determiando el usuerio y contraseña y alertas de erros 
 //guardando el usuerio y saldo en localstorage 
+const user_cuenta = document.getElementById('usercuenta')
+let saldo = 500;
 function login(){ 
-    var user = document.getElementById('username').value
-   var pass = document.getElementById('password').value     
+    let user = document.getElementById('username').value
+   let pass = document.getElementById('password').value     
     const datos = {user,
-    pass, saldo
+    pass,
     };        
 
-    if(user == "Ash Ketchum" && pass == "1234"){
+    if(user == 'Ash Ketchum' && pass == "1234"){
         console.log(datos); 
         localStorage.setItem('saldo',500);
          if(localStorage.getItem('infocuenta')){
@@ -27,13 +25,13 @@ function login(){
         }
     if(user == "Ash Ketchum" && pass == ""){
         swal ( "Oops" ,  "No se ingreso la contraseña!",  "error");
-        
         }
         if(user == "" && pass == "1234"){
             swal ( "Oops" ,  "No se ingreso el usuario!",  "error");
             }
 }
-    //funcion imprimir nombre del usuario 
-    window.onload = function imprimir(){
-        user_cuenta.innerText = localStorage.getItem('infocuenta');
-    }
+//funcion imprimir nombre del usuario 
+window.onload = function imprimir(){
+    user_cuenta.innerText = localStorage.getItem('infocuenta')
+   
+} 
