@@ -1,5 +1,6 @@
 document.getElementById('form').addEventListener('submit', agregar,);
 document.getElementById('form1').addEventListener('submit', agregar2);
+const Saldo = document.getElementById('saldo');
 // Agregar y guardar en el localstorage
 function agregar() { 
 let descripcion = document.getElementById('descripcion').value;
@@ -108,5 +109,9 @@ function mostrar_ocultar(dato){
         default:
          }
      }
+//funcion imprimir saldo 
+window.onload = function imprimir(){
+  Saldo.innerText = localStorage.getItem('saldo')
 
+} 
 
