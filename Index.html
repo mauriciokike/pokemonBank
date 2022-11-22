@@ -75,4 +75,80 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
+    </html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login</title>
+        <link rel="stylesheet" href="css\bootstrap.min.css">
+        <link rel="stylesheet" href="Css.css">
+    </head>
+<body class="body-login">
+    <section class="index-seccion">
+    <div class="container container-login">
+        <div class="row">
+            <div class="col bg">
+                
+            </div>
+            <div class="col">
+                <div class="text-end">
+                    <img src="img\Logo.png" class="logo-login" alt="">
+                    <H2 class="fw-bold">Bienvenidos</H2>
+                </div>
+                <!--Login-->
+                    <form id="form">
+                        <div class="labels">
+                            <p class="login-text">Usuario</p>           
+                            <input type="text" class="Form-Control" id="username">
+                        </div>
+                        <div class="labels">
+                           <p class="login-text">Contraseña</p>
+                                <input class="Form-Control"  type="password" id="password">
+                                <div class="Crear-recuperacion">
+                                    <span><a href="#">¿Has Olvidado la Contraseña?</a></span>
+                                    <br>
+                                </div>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <Input Type="checkbox" name="Connected" class="form-check-input" id=""> 
+                            <label for="connected" class="form-check-label">Manetener Sesión</label>
+                        </div>
+                        <div class="d-grid">
+                            <input type="button" class="btn- mb-3" id="button" value="Iniciar Sesion" onclick="login()">
+                        </div>
+                        <div class="Crear-registro">
+                            <span>No Tienes Cuenta? <a href="#">Regístrate</a></span>
+                            <br>
+                        </div>
+                        <h8 id="usercuenta"></h8>
+                    </form>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer>
+        <div class="social">
+            <img src="img\Logo.png" alt="Logo" class="logo-footer">
+            <div class="info">
+            <div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Direccion: Col. Escalon #2600 San Salvador.</a></li>
+        </ul>
+        </div>
+        <div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Tel: 2424-2522</a></li>
+        </ul>
+    </div>
+</div>
+    </div>
+    <div class="derechos">
+    <p class="copyright text-center">© Pokémon Bank 2022</p></div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
     </html>
